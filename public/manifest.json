@@ -1,0 +1,33 @@
+{
+  "name": "IMPOSTORES - Atletica da Unicesumar",
+  "short_name": "IMPOSTORES",
+  "description": "A Atletica impostora da Unicesumar. Integracao, festas epicas, networking e a melhor delegacao do UNI 2026.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#ea580c",
+  "icons": [
+    {
+      "src": "/images/pato.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/pato.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["sports", "social"],
+  "screenshots": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ]
+}

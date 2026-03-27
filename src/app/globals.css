@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+/* 1. Fontes da Impostores */
+@font-face {
+  font-family: "Damages";
+  src: url("/fonts/Damages.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Damages";
+  src: url("/fonts/Damages-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 2. Variáveis de Cores (Apenas um :root) */
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 100%;
+  
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 100%;
+  
+  --primary: 21 90% 48%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 65%;
+  
+  --accent: 45 93% 56%;
+  --accent-foreground: 0 0% 0%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 240 4% 16%;
+  --input: 240 4% 16%;
+  --ring: 21 90% 48%;
+  
+  --radius: 1rem;
+  
+  /* Cores Customizadas */
+  --orange-main: 21 90% 48%;
+  --orange-hover: 21 91% 40%;
+  --gold-main: 45 93% 56%;
+  --gold-hover: 38 92% 50%;
+  --green-main: 142 71% 45%;
+  --blue-main: 217 91% 60%;
+  --zinc-text: 240 5% 65%;
+  --zinc-border: 240 4% 16%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-orange: hsl(var(--orange-main));
+  --color-orange-hover: hsl(var(--orange-hover));
+  --color-gold: hsl(var(--gold-main));
+  --color-gold-hover: hsl(var(--gold-hover));
+  --color-green: hsl(var(--green-main));
+  --color-blue: hsl(var(--blue-main));
+  --color-zinc-text: hsl(var(--zinc-text));
+  --color-zinc-border: hsl(var(--zinc-border));
+  
+  --font-damages: "Damages", sans-serif;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3. Corpo do Site (Apenas configurações básicas, sem imagem aqui) */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 4. Camada da Imagem de Fundo (Super Otimizada!) */
+body::before {
+  content: "";
+  position: fixed; /* Fica fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  /* Configuração da Imagem */
+  background-image: url(/images/fundo-atletica.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Fica lá no fundo */
+  z-index: -2; 
+  
+  /* O Truque Mágico: Força o uso da Placa de Vídeo (GPU) e para de travar */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 5. Camada escura sobre a foto de fundo */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  background-color: rgba(0, 0, 0, 0.7); /* Aumentei pra 0.7 pra garantir a leitura */
+  
+  /* Fica entre o site e a foto */
+  z-index: -1; 
+  
+  /* Força aceleração da GPU também */
+  transform: translateZ(0);
+}
+
+.font-damages {
+  font-family: var(--font-damages);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--orange-main));
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(234, 88, 12, 0.5); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in { animation: fadeIn 0.4s ease-in-out forwards; }
+.animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-marquee { animation: marquee 20s linear infinite; }
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* Glow effects */
+.glow-orange { filter: drop-shadow(0px 10px 30px rgba(234, 88, 12, 0.4)); }
+.glow-gold { filter: drop-shadow(0px 10px 30px rgba(251, 191, 36, 0.4)); }
+.glow-green { filter: drop-shadow(0px 10px 30px rgba(34, 197, 94, 0.3)); }
+.glow-blue { filter: drop-shadow(0px 10px 30px rgba(59, 130, 246, 0.4)); }
+
+/* Card hover effects */
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Product image hover */
+.product-img-hover { transition: transform 0.3s ease; }
+.product-img-hover:hover { transform: scale(1.1); }
+
+/* Button shine effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.btn-shine:hover::after { left: 100%; }
+
+/* Gradient backgrounds */
+.bg-gradient-orange { background: linear-gradient(135deg, hsl(var(--card)), #1a0f0a); }
+.bg-gradient-gold { background: linear-gradient(135deg, hsl(var(--card)), #2a1a00); }
+.bg-gradient-blue { background: linear-gradient(135deg, hsl(var(--card)), #0f172a); }
+.bg-gradient-green { background: linear-gradient(135deg, hsl(var(--card)), #052e16); }

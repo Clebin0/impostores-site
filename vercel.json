@@ -1,0 +1,62 @@
+{
+  "buildCommand": "next build",
+  "env": {
+    "NEXT_PUBLIC_SITE_NAME": "@NEXT_PUBLIC_SITE_NAME",
+    "NEXT_PUBLIC_SITE_URL": "@NEXT_PUBLIC_SITE_URL",
+    "NEXT_PUBLIC_INSTAGRAM_USERNAME": "@NEXT_PUBLIC_INSTAGRAM_USERNAME",
+    "NEXT_PUBLIC_WHATSAPP_NUMBER": "@NEXT_PUBLIC_WHATSAPP_NUMBER",
+    "NEXT_PUBLIC_PIX_KEY": "@NEXT_PUBLIC_PIX_KEY",
+    "NEXT_PUBLIC_API_URL": "@NEXT_PUBLIC_API_URL",
+    "NEXT_PUBLIC_CHEERS_API_URL": "@NEXT_PUBLIC_CHEERS_API_URL"
+  },
+  "headers": [
+    {
+      "source": "/manifest.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/manifest+json"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
+    },
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/images/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/impostoresa",
+      "permanent": false
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/5541999999999",
+      "permanent": false
+    }
+  ]
+}
