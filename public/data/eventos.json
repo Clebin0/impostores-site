@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "titulo": "Bem-vindo Calouros 2024",
+    "data": "2024-03-15",
+    "hora": "19:00",
+    "local": "Ginásio da UNIFEB",
+    "descricao": "Grande festa de boas-vindas para os novos integrantes da atlética com musica, comida e diversão.",
+    "imagem": "/images/pato.png",
+    "categoria": "Social"
+  },
+  {
+    "id": "2",
+    "titulo": "Torneio de Futsal",
+    "data": "2024-03-22",
+    "hora": "18:00",
+    "local": "Quadra Polivalente",
+    "descricao": "Torneio interno de futsal entre turmas com premiação em drinks no bar do Pedrão.",
+    "imagem": "/images/mascote.png",
+    "categoria": "Esportes"
+  },
+  {
+    "id": "3",
+    "titulo": "Happy Hour IMPOSTORES",
+    "data": "2024-03-29",
+    "hora": "20:00",
+    "local": "Bar do Pedrão",
+    "descricao": "Encontro casual dos integrantes para relaxar e integrar a galera.",
+    "imagem": "/images/bar-pedrao.png",
+    "categoria": "Social"
+  },
+  {
+    "id": "4",
+    "titulo": "Ação Social - Doações",
+    "data": "2024-04-05",
+    "hora": "14:00",
+    "local": "APAE Local",
+    "descricao": "Coleta e entrega de doações para instituições carentes da região.",
+    "imagem": "/images/pato-uni.png",
+    "categoria": "Ação Social"
+  },
+  {
+    "id": "5",
+    "titulo": "Churrasco IMPOSTORES",
+    "data": "2024-04-12",
+    "hora": "17:00",
+    "local": "Área de Lazer",
+    "descricao": "Grande churrascaria com toda a galera. Venha integrar!",
+    "imagem": "/images/tio-patinhas.png",
+    "categoria": "Social"
+  },
+  {
+    "id": "6",
+    "titulo": "Competição de Fotografia",
+    "data": "2024-04-19",
+    "hora": "16:00",
+    "local": "Campus UNIFEB",
+    "descricao": "Mostre seu talento fotográfico com tema sobre a atlética.",
+    "imagem": "/images/mascote.png",
+    "categoria": "Competição"
+  }
+]
