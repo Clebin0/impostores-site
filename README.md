@@ -22,7 +22,7 @@ Site oficial da atlética IMPOSTORES desenvolvido com Next.js 16, React 19, Type
 
 ## Estrutura do Projeto
 
-```
+``` 
 src/
 ├── app/                    # Rotas da aplicação
 │   ├── page.tsx           # Home
