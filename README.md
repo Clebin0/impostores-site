@@ -1,153 +1,86 @@
-# IMPOSTORES - Website Profissional
+<div align="center">
 
-Site oficial da atlética IMPOSTORES desenvolvido com Next.js 16, React 19, TypeScript e Tailwind CSS.
+# IMPOSTORES
 
-## Características Principais
+**Website da Atlética IMPOSTORES**
 
-- **Home Expandida**: Seções completas sobre a atlética com call-to-action estratégicos
-- **Calendário de Eventos**: Visualização interativa com integração de dados do Cheers
-- **Guia do Calouro**: Informações essenciais para novos membros
-- **Ação Social**: Registro de horas complementares e atividades sociais
-- **Loja Profissional**: E-commerce com carrinho, customização de produtos e checkout PIX
-- **Diretoria**: Apresentação destacada dos presidentes e equipe
-- **Parceiros**: Exposição de parceiros e patrocinadores
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+<img src="https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+<img src="https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+<img src="https://img.shields.io/badge/Tailwind-000000?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
 
-## Tecnologias
+</div>
 
-- **Framework**: Next.js 16 com App Router
-- **Linguagem**: TypeScript
-- **Estilo**: Tailwind CSS v4
-- **Ícones**: Phosphor Icons
-- **Fontes**: Geist, Damages
+---
 
-## Estrutura do Projeto
+Aplicação web desenvolvida para centralizar comunicação, eventos, conteúdo institucional e experiências digitais da Atlética IMPOSTORES.
 
-``` 
+## Funcionalidades
+
+- home institucional;
+- calendário de eventos;
+- guia do calouro;
+- área de ação social;
+- apresentação da diretoria;
+- parceiros e patrocinadores;
+- catálogo de produtos;
+- carrinho persistente;
+- customização de produtos;
+- fluxo de checkout Pix em modo demonstrativo.
+
+## Stack
+
+~~~text
+Next.js 16
+React 19
+TypeScript
+Tailwind CSS
+App Router
+~~~
+
+## Estrutura principal
+
+~~~text
 src/
-├── app/                    # Rotas da aplicação
-│   ├── page.tsx           # Home
-│   ├── eventos/           # Página de eventos
-│   ├── guia-calouro/      # Guia do calouro
-│   ├── acao-social/       # Ação social
-│   ├── loja/              # Loja e checkout
-│   ├── parceiros/         # Parceiros
-│   ├── diretoria/         # Diretoria
-│   ├── layout.tsx         # Layout base
-│   └── globals.css        # Estilos globais
-├── components/            # Componentes reutilizáveis
-│   ├── home/             # Componentes da home
-│   ├── eventos/          # Componentes de eventos
-│   ├── loja/             # Componentes da loja
-│   ├── Navbar.tsx        # Barra de navegação
-│   ├── Footer.tsx        # Rodapé
-│   └── CartDrawer.tsx    # Drawer do carrinho
-├── lib/                  # Utilidades e contextos
-│   ├── types.ts         # Tipos TypeScript
-│   ├── data.ts          # Dados estáticos
-│   ├── cart-context.tsx # Contexto do carrinho
-│   └── cart-utils.ts    # Funções utilitárias
-└── public/              # Assets estáticos
-    ├── images/          # Imagens e logos
-    └── fonts/           # Fontes customizadas
-```
+├── app/          rotas e páginas
+├── components/   componentes reutilizáveis
+└── lib/          tipos, dados e utilidades
 
-## Como Rodar Localmente
+public/
+├── images/
+└── fonts/
+~~~
 
-1. **Clonar o repositório**
-   ```bash
-   git clone https://github.com/Clebin0/impostores.git
-   cd impostores
-   ```
+## Executar localmente
 
-2. **Instalar dependências**
-   ```bash
-   npm install
-   # ou
-   pnpm install
-   ```
+~~~bash
+git clone https://github.com/Clebin0/impostores-site.git
+cd impostores-site
+npm install
+npm run dev
+~~~
 
-3. **Rodar o servidor de desenvolvimento**
-   ```bash
-   npm run dev
-   # ou
-   pnpm dev
-   ```
+Abra <code>http://localhost:3000</code>.
 
-4. **Acessar a aplicação**
-   - Abra [http://localhost:3000](http://localhost:3000) no navegador
+## Build
 
-## Variáveis de Ambiente
-
-Se precisar integrar com APIs externas, crie um arquivo `.env.local`:
-
-```bash
-# Exemplo (ajuste conforme necessário)
-NEXT_PUBLIC_API_URL=https://api.example.com
-```
-
-## Build para Produção
-
-```bash
+~~~bash
 npm run build
 npm start
-# ou
-pnpm build
-pnpm start
-```
+~~~
 
-## Customizações
+## Estado do projeto
 
-### Cores e Tema
+O checkout existente é demonstrativo. Pagamentos reais, autenticação e integrações externas exigem configuração e validação adicionais antes de qualquer uso em produção.
 
-As cores são definidas em `src/app/globals.css` usando variáveis CSS:
+## Arquitetura
 
-- `--background`: Cor de fundo
-- `--foreground`: Cor do texto
-- `--primary`: Cor principal (laranja dos Impostores)
-- `--secondary`: Cor secundária
-- `--accent`: Cor de destaque
+A aplicação utiliza componentes reutilizáveis no frontend e mantém a separação entre conteúdo, estado do carrinho e apresentação. A base foi estruturada para permitir integração futura com APIs, autenticação e persistência.
 
-### Fonte Damages
+---
 
-A fonte Damages está disponível em `public/fonts/` e pode ser usada com a classe `font-damages`.
+<div align="center">
 
-## Funcionalidades do E-commerce
+Projeto web desenvolvido por Cledson Santos.
 
-- Catálogo de produtos com imagens
-- Carrinho persistente via localStorage
-- Customização de produtos (ex: nome nas costas)
-- Checkout com PIX (mockado)
-- Resumo de pedido
-
-## Integrações Futuras
-
-- API de eventos do Cheers
-- Sistema de autenticação
-- Banco de dados para gerenciar produtos
-- Pagamento real via PIX/Stripe
-- Sistema de administração
-
-## Deploy
-
-O projeto está pronto para deploy na Vercel:
-
-```bash
-npm run build
-vercel deploy
-```
-
-## Contribuindo
-
-1. Crie uma branch (`git checkout -b feature/sua-feature`)
-2. Commit suas mudanças (`git commit -m 'Adiciona sua feature'`)
-3. Push para a branch (`git push origin feature/sua-feature`)
-4. Abra um Pull Request
-
-## Licença
-
-Copyright © 2024 IMPOSTORES. Todos os direitos reservados.
-
-## Contato
-
-- Instagram: [@impostoresunifeb](https://instagram.com/impostoresunifeb)
-- Email: impostores@unifeb.edu.br
+</div>
