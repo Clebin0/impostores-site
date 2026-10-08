@@ -17,8 +17,8 @@ export default function HeroSection() {
         </span>
 
         {/* Main Title */}
-        <h1 className="font-damages mb-6 text-5xl leading-tight text-foreground md:text-6xl lg:text-7xl">
-          A Atletica Mais{" "}
+        <h1 className="font-damages mb-6 text-4xl leading-tight sm:text-5xl text-foreground md:text-6xl lg:text-7xl">
+          A Atlética Mais{" "}
           <span className="text-gold">Impostora</span>
           <br />
           da Unicesumar
@@ -26,19 +26,17 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground lg:text-xl">
-          Nao somos apenas uma organizacao estudantil. Somos um fundo de
-          investimentos em networking e integracao. Bem-vindo ao monopolio dos
-          Impostores.
+          Comunidade, eventos e amizades que transformam a experiência universitária.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
           <Link
             href="/acao-social"
-            className="btn-shine group flex items-center gap-2 rounded-xl bg-orange px-8 py-4 text-lg font-extrabold text-white transition-all hover:bg-orange-hover hover:shadow-lg hover:shadow-orange/30"
+            className="btn-shine group flex items-center justify-center gap-2 rounded-xl bg-orange px-8 py-4 text-lg font-extrabold text-white transition-all hover:bg-orange-hover hover:shadow-lg hover:shadow-orange/30"
           >
             <HandHeart size={24} weight="fill" />
-            Apoiar a Pascoa Solidaria
+            Conhecer ações sociais
             <ArrowRight
               size={20}
               className="transition-transform group-hover:translate-x-1"
@@ -46,7 +44,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/eventos"
-            className="flex items-center gap-2 rounded-xl border border-border bg-transparent px-8 py-4 text-lg font-extrabold text-foreground transition-all hover:bg-secondary"
+            className="flex items-center justify-center gap-2 rounded-xl border border-border bg-transparent px-8 py-4 text-lg font-extrabold text-foreground transition-all hover:bg-secondary"
           >
             <CalendarBlank size={24} />
             Ver Eventos
