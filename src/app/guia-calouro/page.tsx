@@ -119,13 +119,13 @@ export default function GuiaCalouroPage() {
   return (
     <div className="animate-fade-in">
       {/* Header */}
-      <section className="relative overflow-hidden border-b border-border bg-card">
-        <div className="absolute left-1/2 top-0 h-[2px] w-[300px] -translate-x-1/2 bg-green opacity-50 blur-[40px]" />
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:px-8">
-          <h1 className="font-damages mb-4 text-5xl lg:text-6xl">
+      <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#101012]">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F16A24]/10 via-transparent to-[#101012]" />
+        <div className="relative mx-auto max-w-7xl px-5 py-16 text-left sm:px-8 sm:py-24 lg:py-28">
+          <h1 className="font-damages mb-6 max-w-4xl text-4xl leading-tight text-white sm:text-6xl lg:text-7xl">
             Guia do <span className="text-green">Calouro</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          <p className="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
             Tudo o que voce precisa saber para sobreviver (e dominar) o curso de Ciencias Contabeis na Unicesumar. Seja bem-vindo ao time!
           </p>
         </div>
