@@ -5,9 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   InstagramLogo,
-  TiktokLogo,
-  LinkedinLogo,
-  EnvelopeSimple,
 } from "@phosphor-icons/react";
 import { piadasContabeis, linksUteis } from "@/lib/data";
 
@@ -28,7 +25,7 @@ export default function Footer() {
       {/* Partners Marquee */}
       <div className="overflow-hidden border-b border-border py-8">
         <h3 className="font-damages mb-6 text-center text-2xl text-muted-foreground">
-          Nosso Parceiro Oficial
+          Quem está com a gente
         </h3>
         <div className="relative">
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-card to-transparent" />
@@ -61,7 +58,7 @@ export default function Footer() {
         <div className="relative mb-8 inline-block">
           <button
             onClick={handleMascoteClick}
-            className="transition-transform hover:scale-105 focus:outline-none"
+            className="rounded-xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             aria-label="Clique no mascote para uma surpresa"
           >
             <Image
@@ -90,33 +87,12 @@ export default function Footer() {
           >
             <InstagramLogo weight="fill" />
           </Link>
-          <Link
-            href="#"
-            className="text-4xl text-muted-foreground transition-all hover:-translate-y-1 hover:text-orange"
-            aria-label="TikTok"
-          >
-            <TiktokLogo weight="fill" />
-          </Link>
-          <Link
-            href="#"
-            className="text-4xl text-muted-foreground transition-all hover:-translate-y-1 hover:text-orange"
-            aria-label="LinkedIn"
-          >
-            <LinkedinLogo weight="fill" />
-          </Link>
-          <Link
-            href={`mailto:${linksUteis.pix}`}
-            className="text-4xl text-muted-foreground transition-all hover:-translate-y-1 hover:text-orange"
-            aria-label="Email"
-          >
-            <EnvelopeSimple weight="fill" />
-          </Link>
         </div>
 
         {/* Info */}
-        <p className="text-lg font-extrabold">Atletica Impostores</p>
+        <p className="text-lg font-extrabold">Atlética Impostores</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          A.A.A.C.S.A - Associacao Atletica Academica Ciencias Sociais Aplicadas
+          A.A.A.C.S.A - Associação Atlética Acadêmica Ciências Sociais Aplicadas
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
           UniCesumar Curitiba | #FazoQuack
