@@ -95,8 +95,9 @@ export default function RootLayout({
       {/* 3. Injetamos a variável da Damages no body do site */}
       <body className={`${inter.className} ${damages.variable}`}>
         <CartProvider>
+          <a href="#conteudo-principal" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-3 focus:font-bold focus:text-black">Pular para o conteúdo</a>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main id="conteudo-principal" className="min-h-screen" tabIndex={-1}>{children}</main>
           <Footer />
           <CartDrawer />
         </CartProvider>
