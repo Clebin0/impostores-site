@@ -26,17 +26,17 @@ export default function CTASection() {
               className="mb-6 text-gold"
             />
             <h3 className="font-damages mb-4 text-3xl text-gold lg:text-4xl">
-              Acesse a Loja
+              Vista a Impostores
             </h3>
             <p className="mb-8 text-lg text-muted-foreground">
               Confira nossos produtos exclusivos: moletons, camisetas, copos e
-              muito mais. Vista a camisa e faca parte da familia.
+              muito mais. Vista a camisa e faça parte da família.
             </p>
             <Link
               href="/loja"
               className="btn-shine group inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 font-extrabold text-background transition-all hover:bg-gold-hover"
             >
-              Ver Produtos
+              Explorar a loja
               <ArrowRight
                 size={20}
                 className="transition-transform group-hover:translate-x-1"
@@ -45,7 +45,7 @@ export default function CTASection() {
           </div>
         </div>
 
-        {/* Acao Social CTA */}
+        {/* Ação Social CTA */}
         <div className="group relative overflow-hidden rounded-3xl border border-green/30 bg-gradient-to-br from-card to-[#001a0a] p-8 lg:p-12">
           <div className="absolute -right-10 -top-10 opacity-10">
             <Image
@@ -66,7 +66,7 @@ export default function CTASection() {
               Acao Social
             </h3>
             <p className="mb-8 text-lg text-muted-foreground">
-              Participe das nossas acoes solidarias, ajude quem precisa e ainda
+              Participe das nossas ações solidárias, ajude quem precisa e ainda
               garanta suas horas complementares.
             </p>
             <Link
