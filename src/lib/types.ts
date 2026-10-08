@@ -1,4 +1,5 @@
 export interface Evento {
+  id?: string;
   data: string;
   tipo: string;
   titulo: string;
