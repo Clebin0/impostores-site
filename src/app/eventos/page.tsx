@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CalendarioEventos from "@/components/eventos/CalendarioEventos";
 import EventoCard from "@/components/eventos/EventoCard";
 import { Crown, Ticket, Phone, MapPin } from "@phosphor-icons/react/dist/ssr";
@@ -9,7 +9,8 @@ import type { Evento } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Eventos",
-  description: "Calendario de eventos e festas da Atletica Impostores. Confira as proximas datas e garanta seu ingresso!",
+  description:
+    "Calendario de eventos e festas da Atletica Impostores. Confira as proximas datas e garanta seu ingresso!",
 };
 
 // Load events from JSON file
@@ -46,7 +47,7 @@ async function getEventos(): Promise<Evento[]> {
         tipo: "ACAO SOCIAL",
         titulo: "Pascoa Solidaria - Arrecadacao",
         desc: "Ultimo dia para comprar rifas e garantir horas complementares.",
-        link: linksUteis.whatsapp,
+        link: linksUteis.instagram,
       },
     ];
   }
@@ -65,7 +66,8 @@ export default async function EventosPage() {
             Calendario <span className="text-blue">Eventos</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            Os maiores eventos do ano voce so encontra aqui! Confira a agenda oficial e garanta sua presenca.
+            Os maiores eventos do ano voce so encontra aqui! Confira a agenda oficial e garanta sua
+            presenca.
           </p>
         </div>
       </section>
@@ -90,14 +92,11 @@ export default async function EventosPage() {
                 20, 21 E 22 DE NOVEMBRO | FLORIANOPOLIS
               </div>
 
-              <h2 className="font-damages mb-4 text-5xl text-gold lg:text-6xl">
-                POUPA UNI 2K26
-              </h2>
+              <h2 className="font-damages mb-4 text-5xl text-gold lg:text-6xl">POUPA UNI 2K26</h2>
 
               <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
                 Fala, Patinhos! O Patao esta de volta. Pacote completo: transporte
-                (Curitiba-Florianopolis), hospedagem, festas e o Kit Impostores
-                exclusivo.
+                (Curitiba-Florianopolis), hospedagem, festas e o Kit Impostores exclusivo.
               </p>
 
               {/* Pricing */}
@@ -124,7 +123,7 @@ export default async function EventosPage() {
                 </div>
                 <div className="border-t border-gold/30 bg-background px-6 py-4">
                   <p className="text-sm text-muted-foreground">
-                    Pagamento via PIX: <strong className="text-foreground">{linksUteis.pix}</strong>
+                    Pagamento via PIX indispon?vel; consulte os canais oficiais.
                   </p>
                 </div>
               </div>
@@ -152,10 +151,9 @@ export default async function EventosPage() {
                   <Phone size={20} weight="fill" className="text-gold" />
                   Suporte UNI:
                 </h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p><strong className="text-foreground">Aline Santos</strong> (Pres.): (41) 99510-8205</p>
-                  <p><strong className="text-foreground">Bruno Rafael</strong> (Vice): (41) 99573-7930</p>
-                </div>
+                <p className="text-sm text-muted-foreground">
+                  Fale com a atl?tica pelos canais oficiais.
+                </p>
               </div>
             </div>
           </div>

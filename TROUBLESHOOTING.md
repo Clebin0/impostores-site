@@ -307,8 +307,8 @@ npm run dev
 
 ### 4. Contate o Suporte
 - Instagram: @impostoresa
-- Email: CONTACT_REMOVED_FROM_PUBLIC_HISTORY
-- WhatsApp: REMOVED_FROM_PUBLIC_HISTORY
+Atendimento: consulte o Instagram institucional da Atl?tica.
+- WhatsApp: Consulte o Instagram oficial da Atl?tica.
 
 ---
 

@@ -62,27 +62,23 @@ export default function WhyJoinSection() {
           Por que investir tempo nos Impostores?
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-muted-foreground">
-          Ser parte da atletica e muito mais do que participar de festas. E
-          construir seu futuro enquanto se diverte.
+          Ser parte da atletica e muito mais do que participar de festas. E construir seu futuro
+          enquanto se diverte.
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => {
+          {benefits.map((benefit) => {
             const Icon = benefit.icon;
             return (
               <div
-                key={index}
+                key={benefit.title}
                 className="card-hover group rounded-2xl border border-border bg-background p-8 text-center"
               >
-                <div
-                  className={`mb-6 inline-flex rounded-2xl bg-secondary p-4 ${benefit.color}`}
-                >
+                <div className={`mb-6 inline-flex rounded-2xl bg-secondary p-4 ${benefit.color}`}>
                   <Icon size={48} weight="duotone" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold">{benefit.title}</h3>
-                <p className="leading-relaxed text-muted-foreground">
-                  {benefit.description}
-                </p>
+                <p className="leading-relaxed text-muted-foreground">{benefit.description}</p>
               </div>
             );
           })}

@@ -26,7 +26,7 @@ Aplicação web desenvolvida para centralizar comunicação, eventos, conteúdo 
 - catálogo de produtos;
 - carrinho persistente;
 - customização de produtos;
-- fluxo de checkout Pix em modo demonstrativo.
+- carrinho de produtos; checkout desativado at? a integra??o segura de pedidos e pagamentos.
 
 ## Stack
 

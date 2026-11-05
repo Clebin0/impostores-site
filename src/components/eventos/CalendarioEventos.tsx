@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CaretLeft, CaretRight, CalendarCheck, Link as LinkIcon } from "@phosphor-icons/react";
 import type { Evento } from "@/lib/types";
 import clsx from "clsx";
@@ -10,8 +10,18 @@ interface CalendarioEventosProps {
 }
 
 const MONTH_NAMES = [
-  "Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho",
-  "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+  "Janeiro",
+  "Fevereiro",
+  "Marco",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
 ];
 
 const DAY_NAMES = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
@@ -22,7 +32,7 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
 
   const month = currentDate.getMonth();
   const year = currentDate.getFullYear();
-  
+
   const firstDayOfMonth = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const today = new Date();
@@ -50,9 +60,7 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
   };
 
   const isToday = (day: number) =>
-    day === today.getDate() &&
-    month === today.getMonth() &&
-    year === today.getFullYear();
+    day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
 
   return (
     <div className="grid gap-6 lg:grid-cols-2">
@@ -61,6 +69,7 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
           <button
+            type="button"
             onClick={prevMonth}
             className="rounded-lg border border-border bg-background p-2 text-foreground transition-colors hover:bg-secondary"
             aria-label="Mes anterior"
@@ -71,6 +80,7 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
             {MONTH_NAMES[month]} {year}
           </h3>
           <button
+            type="button"
             onClick={nextMonth}
             className="rounded-lg border border-border bg-background p-2 text-foreground transition-colors hover:bg-secondary"
             aria-label="Proximo mes"
@@ -91,8 +101,8 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
         {/* Calendar days */}
         <div className="grid grid-cols-7 gap-1">
           {/* Empty cells for days before month start */}
-          {Array.from({ length: firstDayOfMonth }).map((_, i) => (
-            <div key={`empty-${i}`} className="aspect-square" />
+          {Array.from({ length: firstDayOfMonth }, (_, index) => index + 1).map((emptyDay) => (
+            <div key={`empty-${year}-${month}-${emptyDay}`} className="aspect-square" />
           ))}
 
           {/* Days of the month */}
@@ -105,6 +115,7 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
 
             return (
               <button
+                type="button"
                 key={day}
                 onClick={() => handleDayClick(day)}
                 disabled={!hasEvent}
@@ -114,7 +125,7 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
                     ? "cursor-pointer border-gold text-gold hover:bg-gold/10"
                     : "cursor-default border-border text-foreground",
                   isTodayDay && "bg-orange text-white border-orange",
-                  isSelected && "bg-gold/20 ring-2 ring-gold"
+                  isSelected && "bg-gold/20 ring-2 ring-gold",
                 )}
               >
                 {day}
@@ -134,12 +145,8 @@ export default function CalendarioEventos({ eventos }: CalendarioEventosProps) {
             <span className="mb-3 inline-block rounded-md bg-blue px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
               {selectedEvent.tipo}
             </span>
-            <h3 className="mb-3 text-2xl font-bold text-foreground">
-              {selectedEvent.titulo}
-            </h3>
-            <p className="mb-6 leading-relaxed text-muted-foreground">
-              {selectedEvent.desc}
-            </p>
+            <h3 className="mb-3 text-2xl font-bold text-foreground">{selectedEvent.titulo}</h3>
+            <p className="mb-6 leading-relaxed text-muted-foreground">{selectedEvent.desc}</p>
             {selectedEvent.link && (
               <a
                 href={selectedEvent.link}

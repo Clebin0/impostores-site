@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,7 +16,8 @@ import { linksUteis } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Parceiros",
-  description: "Parcerias estrategicas da Atletica Impostores. Conheca nosso socio oficial e seus beneficios.",
+  description:
+    "Parcerias estrategicas da Atletica Impostores. Conheca nosso socio oficial e seus beneficios.",
 };
 
 const beneficios = [
@@ -53,7 +54,8 @@ export default function ParceirosPage() {
             Clube de <span className="text-blue">Vantagens</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            Parcerias estrategicas para o seu balanco social. Beneficios exclusivos para membros da Impostores.
+            Parcerias estrategicas para o seu balanco social. Beneficios exclusivos para membros da
+            Impostores.
           </p>
         </div>
       </section>
@@ -74,20 +76,15 @@ export default function ParceirosPage() {
               </h2>
 
               <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-                Assine o plano semestral da Impostores e garanta acesso VIP ao
-                Pedrao Bar, o point oficial das atleticas de Curitiba. Entrada
-                garantida, sem filas, sem estresse.
+                Assine o plano semestral da Impostores e garanta acesso VIP ao Pedrao Bar, o point
+                oficial das atleticas de Curitiba. Entrada garantida, sem filas, sem estresse.
               </p>
 
               {/* Price */}
               <div className="mb-8 flex items-end gap-2">
-                <span className="font-damages text-5xl text-gold lg:text-6xl">
-                  R$ 30
-                </span>
+                <span className="font-damages text-5xl text-gold lg:text-6xl">R$ 30</span>
                 <span className="mb-2 text-xl text-muted-foreground">,00</span>
-                <span className="mb-2 text-lg text-muted-foreground">
-                  /semestre
-                </span>
+                <span className="mb-2 text-lg text-muted-foreground">/semestre</span>
               </div>
 
               {/* CTA */}
@@ -98,10 +95,7 @@ export default function ParceirosPage() {
               >
                 <Crown size={24} weight="fill" />
                 Assinar Agora
-                <ArrowRight
-                  size={20}
-                  className="transition-transform group-hover:translate-x-1"
-                />
+                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
@@ -130,15 +124,13 @@ export default function ParceirosPage() {
       {/* Benefits Grid */}
       <section className="bg-card py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <h2 className="font-damages mb-12 text-center text-4xl">
-            O Que Voce Ganha
-          </h2>
+          <h2 className="font-damages mb-12 text-center text-4xl">O Que Voce Ganha</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {beneficios.map((beneficio, index) => {
+            {beneficios.map((beneficio) => {
               const Icon = beneficio.icon;
               return (
                 <div
-                  key={index}
+                  key={beneficio.titulo}
                   className="card-hover rounded-2xl border border-border bg-background p-6 text-center"
                 >
                   <div className="mx-auto mb-4 inline-flex rounded-2xl bg-blue/10 p-4 text-blue">
@@ -155,9 +147,7 @@ export default function ParceirosPage() {
 
       {/* How It Works */}
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <h2 className="font-damages mb-12 text-center text-4xl">
-          Como Funciona
-        </h2>
+        <h2 className="font-damages mb-12 text-center text-4xl">Como Funciona</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {[
             {
@@ -175,9 +165,9 @@ export default function ParceirosPage() {
               title: "Aproveite os Beneficios",
               desc: "Apresente sua carteirinha na entrada e aproveite!",
             },
-          ].map((item, index) => (
+          ].map((item) => (
             <div
-              key={index}
+              key={item.title}
               className="relative rounded-2xl border border-border bg-card p-6 text-center"
             >
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-2 font-black text-background">
@@ -193,15 +183,12 @@ export default function ParceirosPage() {
       {/* FAQ */}
       <section className="bg-card py-16">
         <div className="mx-auto max-w-4xl px-4 lg:px-8">
-          <h2 className="font-damages mb-12 text-center text-4xl">
-            Duvidas Frequentes
-          </h2>
+          <h2 className="font-damages mb-12 text-center text-4xl">Duvidas Frequentes</h2>
           <div className="space-y-4">
             {[
               {
                 pergunta: "Quanto tempo dura a assinatura?",
-                resposta:
-                  "A assinatura tem validade de 6 meses (1 semestre letivo).",
+                resposta: "A assinatura tem validade de 6 meses (1 semestre letivo).",
               },
               {
                 pergunta: "Posso cancelar a qualquer momento?",
@@ -218,9 +205,9 @@ export default function ParceirosPage() {
                 resposta:
                   "Sim, o plano Socio Impostores e exclusivo para alunos e ex-alunos do curso de Ciencias Contabeis da Unicesumar.",
               },
-            ].map((faq, index) => (
+            ].map((faq) => (
               <div
-                key={index}
+                key={faq.pergunta}
                 className="rounded-2xl border border-border bg-background p-6"
               >
                 <h3 className="mb-2 flex items-center gap-2 font-bold">
@@ -237,9 +224,7 @@ export default function ParceirosPage() {
       {/* Final CTA */}
       <section className="mx-auto max-w-4xl px-4 py-16 text-center lg:px-8">
         <Crown size={64} weight="duotone" className="mx-auto mb-6 text-gold" />
-        <h2 className="font-damages mb-4 text-4xl">
-          Pronto para Virar Socio?
-        </h2>
+        <h2 className="font-damages mb-4 text-4xl">Pronto para Virar Socio?</h2>
         <p className="mb-8 text-lg text-muted-foreground">
           Garanta sua assinatura agora e aproveite todos os beneficios exclusivos.
         </p>

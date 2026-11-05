@@ -40,13 +40,7 @@ export function slugify(text: string): string {
 
 export function truncate(text: string, length: number): string {
   if (text.length <= length) return text;
-  return text.slice(0, length) + "...";
-}
-
-export function generatePixQrCode(value: number): string {
-  // Placeholder for QR code generation
-  // In production, use a library like qrcode.react or similar
-  return `pix://payment?amount=${value}`;
+  return `${text.slice(0, length)}...`;
 }
 
 export function validateEmail(email: string): boolean {
@@ -73,9 +67,9 @@ export function isMobile(): boolean {
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
 
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: never[]) => unknown>(
   func: T,
-  wait: number
+  wait: number,
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null;
   return function executedFunction(...args: Parameters<T>) {
@@ -88,9 +82,9 @@ export function debounce<T extends (...args: any[]) => any>(
   };
 }
 
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: never[]) => unknown>(
   func: T,
-  limit: number
+  limit: number,
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
   return function executedFunction(...args: Parameters<T>) {

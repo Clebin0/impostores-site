@@ -21,12 +21,10 @@ export default function InstagramSection() {
             <InstagramLogo size={24} weight="fill" className="text-orange" />
             <span className="font-bold">@impostoresuc</span>
           </div>
-          <h2 className="font-damages mb-4 text-4xl lg:text-5xl">
-            Siga a gente no Instagram
-          </h2>
+          <h2 className="font-damages mb-4 text-4xl lg:text-5xl">Siga a gente no Instagram</h2>
           <p className="mx-auto max-w-xl text-lg text-muted-foreground">
-            Acompanhe todas as novidades, eventos, memes contabeis e muito mais
-            no nosso perfil oficial.
+            Acompanhe todas as novidades, eventos, memes contabeis e muito mais no nosso perfil
+            oficial.
           </p>
         </div>
 
@@ -57,9 +55,7 @@ export default function InstagramSection() {
               target="_blank"
               className="group relative aspect-square overflow-hidden rounded-2xl border border-border"
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-80`}
-              />
+              <div className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-80`} />
               <div className="absolute inset-0 flex items-center justify-center">
                 <Image
                   src="/images/logo.png"
@@ -88,10 +84,7 @@ export default function InstagramSection() {
           >
             <InstagramLogo size={24} weight="fill" />
             Seguir @impostoresuc
-            <ArrowRight
-              size={20}
-              className="transition-transform group-hover:translate-x-1"
-            />
+            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

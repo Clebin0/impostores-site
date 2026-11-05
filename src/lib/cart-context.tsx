@@ -5,7 +5,14 @@ import type { ItemCarrinho, Produto } from "./types";
 
 interface CartContextType {
   items: ItemCarrinho[];
-  addItem: (produto: Produto, quantidade: number, tamanho?: string, cor?: string, nomePersonalizado?: string) => void;
+  isHydrated: boolean;
+  addItem: (
+    produto: Produto,
+    quantidade: number,
+    tamanho?: string,
+    cor?: string,
+    nomePersonalizado?: string,
+  ) => void;
   removeItem: (produtoId: string) => void;
   updateQuantity: (produtoId: string, quantidade: number) => void;
   clearCart: () => void;
@@ -23,6 +30,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Hydrate the persisted cart once after the client mounts.
     setMounted(true);
     const saved = localStorage.getItem("impostores-cart");
     if (saved) {
@@ -45,7 +53,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     quantidade: number,
     tamanho?: string,
     cor?: string,
-    nomePersonalizado?: string
+    nomePersonalizado?: string,
   ) => {
     setItems((prev) => {
       const existingIndex = prev.findIndex(
@@ -53,7 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
           item.produto.id === produto.id &&
           item.tamanho === tamanho &&
           item.cor === cor &&
-          item.nomePersonalizado === nomePersonalizado
+          item.nomePersonalizado === nomePersonalizado,
       );
 
       if (existingIndex >= 0) {
@@ -77,9 +85,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return;
     }
     setItems((prev) =>
-      prev.map((item) =>
-        item.produto.id === produtoId ? { ...item, quantidade } : item
-      )
+      prev.map((item) => (item.produto.id === produtoId ? { ...item, quantidade } : item)),
     );
   };
 
@@ -88,10 +94,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setIsOpen(false);
   };
 
-  const total = items.reduce(
-    (sum, item) => sum + item.produto.preco * item.quantidade,
-    0
-  );
+  const total = items.reduce((sum, item) => sum + item.produto.preco * item.quantidade, 0);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantidade, 0);
 
@@ -99,6 +102,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     <CartContext.Provider
       value={{
         items,
+        isHydrated: mounted,
         addItem,
         removeItem,
         updateQuantity,

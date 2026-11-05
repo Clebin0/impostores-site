@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { List, X } from '@phosphor-icons/react';
+import { useState } from "react";
+import Link from "next/link";
+import { List, X } from "@phosphor-icons/react";
 
 const menuItems = [
-  { label: 'Início', href: '/' },
-  { label: 'Eventos', href: '/eventos' },
-  { label: 'Guia do Calouro', href: '/guia-calouro' },
-  { label: 'Ação Social', href: '/acao-social' },
-  { label: 'Loja', href: '/loja' },
-  { label: 'Parceiros', href: '/parceiros' },
-  { label: 'Diretoria', href: '/diretoria' },
+  { label: "Início", href: "/" },
+  { label: "Eventos", href: "/eventos" },
+  { label: "Guia do Calouro", href: "/guia-calouro" },
+  { label: "Ação Social", href: "/acao-social" },
+  { label: "Loja", href: "/loja" },
+  { label: "Parceiros", href: "/parceiros" },
+  { label: "Diretoria", href: "/diretoria" },
 ];
 
 export default function MobileNav() {
@@ -20,6 +20,7 @@ export default function MobileNav() {
   return (
     <>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition"
         aria-label="Menu"

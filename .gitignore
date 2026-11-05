@@ -9,3 +9,10 @@ build/
 .env.*.local
 .vercel
 dist/
+coverage/
+.env*
+!.env.example
+*.tsbuildinfo
+*.db
+*.sqlite
+*.sqlite3

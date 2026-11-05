@@ -3,18 +3,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  InstagramLogo,
-} from "@phosphor-icons/react";
+import { InstagramLogo } from "@phosphor-icons/react";
 import { piadasContabeis, linksUteis } from "@/lib/data";
+
+const partnerTickerItems = Array.from({ length: 10 }, (_, index) => ({
+  id: `partner-${index + 1}`,
+}));
 
 export default function Footer() {
   const [showJoke, setShowJoke] = useState(false);
   const [joke, setJoke] = useState("");
 
   const handleMascoteClick = () => {
-    const randomJoke =
-      piadasContabeis[Math.floor(Math.random() * piadasContabeis.length)];
+    const randomJoke = piadasContabeis[Math.floor(Math.random() * piadasContabeis.length)];
     setJoke(randomJoke);
     setShowJoke(true);
     setTimeout(() => setShowJoke(false), 3000);
@@ -31,9 +32,9 @@ export default function Footer() {
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-card to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-card to-transparent" />
           <div className="animate-marquee flex w-max gap-16 pr-16">
-            {[...Array(10)].map((_, i) => (
+            {partnerTickerItems.map((item) => (
               <Link
-                key={i}
+                key={item.id}
                 href={linksUteis.socio}
                 target="_blank"
                 className="flex items-center gap-3 text-xl font-extrabold text-muted-foreground transition-colors hover:text-gold"
@@ -57,6 +58,7 @@ export default function Footer() {
         {/* Mascote with Easter Egg */}
         <div className="relative mb-8 inline-block">
           <button
+            type="button"
             onClick={handleMascoteClick}
             className="rounded-xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             aria-label="Clique no mascote para uma surpresa"
@@ -94,9 +96,7 @@ export default function Footer() {
         <p className="mt-1 text-sm text-muted-foreground">
           A.A.A.C.S.A - Associação Atlética Acadêmica Ciências Sociais Aplicadas
         </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          UniCesumar Curitiba | #FazoQuack
-        </p>
+        <p className="mt-1 text-sm text-muted-foreground">UniCesumar Curitiba | #FazoQuack</p>
 
         {/* Copyright */}
         <p className="mt-6 text-sm text-muted-foreground">

@@ -1,10 +1,11 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { Crown, Briefcase, Star, Users } from "@phosphor-icons/react/dist/ssr";
 import { diretoria } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Diretoria",
-  description: "Conheca o Conselho Executivo da Atletica Impostores. As mentes por tras da maior atletica de contabeis.",
+  description:
+    "Conheca o Conselho Executivo da Atletica Impostores. As mentes por tras da maior atletica de contabeis.",
 };
 
 function DiretoriaCard({
@@ -21,19 +22,11 @@ function DiretoriaCard({
   return (
     <div
       className={`card-hover group relative overflow-hidden rounded-2xl border bg-card p-8 text-center ${
-        destaque
-          ? "border-gold/50 bg-gradient-to-b from-card to-gold/5"
-          : "border-border"
+        destaque ? "border-gold/50 bg-gradient-to-b from-card to-gold/5" : "border-border"
       }`}
     >
       {/* Crown for presidents */}
-      {destaque && (
-        <Crown
-          size={28}
-          weight="fill"
-          className="absolute right-4 top-4 text-gold"
-        />
-      )}
+      {destaque && <Crown size={28} weight="fill" className="absolute right-4 top-4 text-gold" />}
 
       {/* Avatar */}
       <div
@@ -50,9 +43,7 @@ function DiretoriaCard({
       <h3 className="mb-2 text-xl font-bold">{nome}</h3>
       <p
         className={`inline-flex items-center gap-1 rounded-full px-4 py-1 text-sm font-bold ${
-          destaque
-            ? "bg-gold/10 text-gold"
-            : "bg-orange/10 text-orange"
+          destaque ? "bg-gold/10 text-gold" : "bg-orange/10 text-orange"
         }`}
       >
         {destaque && <Star size={14} weight="fill" />}
@@ -76,8 +67,7 @@ export default function DiretoriaPage() {
             O Conselho <span className="text-gold">Executivo</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            As mentes por tras da maior atletica impostora. Conheca quem faz a
-            magia acontecer.
+            As mentes por tras da maior atletica impostora. Conheca quem faz a magia acontecer.
           </p>
         </div>
       </section>
@@ -147,8 +137,8 @@ export default function DiretoriaPage() {
         <Briefcase size={64} weight="duotone" className="mx-auto mb-6 text-gold" />
         <h2 className="font-damages mb-4 text-4xl">Quer fazer parte?</h2>
         <p className="mb-8 text-lg text-muted-foreground">
-          Novas oportunidades para ingressar na diretoria sao abertas a cada
-          inicio de gestao. Fique de olho no nosso Instagram para nao perder!
+          Novas oportunidades para ingressar na diretoria sao abertas a cada inicio de gestao. Fique
+          de olho no nosso Instagram para nao perder!
         </p>
         <a
           href="https://www.instagram.com/impostoresuc/"
