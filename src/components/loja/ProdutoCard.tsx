@@ -23,7 +23,7 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
 
   const handleAddToCart = () => {
     if (!isAvailable) return;
-    
+
     if (produto.tamanhos || produto.cores || produto.personalizavel) {
       setShowModal(true);
     } else {
@@ -57,7 +57,7 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
       <div
         className={clsx(
           "card-hover group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card",
-          !isAvailable && "opacity-60"
+          !isAvailable && "opacity-60",
         )}
       >
         {/* Badge */}
@@ -66,7 +66,7 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
             "absolute right-3 top-3 z-10 rounded-full px-3 py-1 text-xs font-bold",
             isAvailable
               ? "border border-green/30 bg-green/10 text-green"
-              : "border border-destructive/30 bg-destructive/10 text-destructive"
+              : "border border-destructive/30 bg-destructive/10 text-destructive",
           )}
         >
           {isAvailable ? `${produto.estoque} em estoque` : "ESGOTADO"}
@@ -82,7 +82,7 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
               height={160}
               className={clsx(
                 "product-img-hover h-40 w-auto object-contain",
-                !isAvailable && "grayscale"
+                !isAvailable && "grayscale",
               )}
             />
           ) : (
@@ -115,10 +115,9 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
 
           {/* Price and Button */}
           <div className="flex items-center justify-between">
-            <span className="text-2xl font-black text-gold">
-              R$ {produto.preco.toFixed(2)}
-            </span>
+            <span className="text-2xl font-black text-gold">R$ {produto.preco.toFixed(2)}</span>
             <button
+              type="button"
               onClick={handleAddToCart}
               disabled={!isAvailable || added}
               className={clsx(
@@ -127,7 +126,7 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
                   ? added
                     ? "bg-green text-white"
                     : "bg-orange text-white hover:bg-orange-hover"
-                  : "cursor-not-allowed bg-secondary text-muted-foreground"
+                  : "cursor-not-allowed bg-secondary text-muted-foreground",
               )}
             >
               {added ? (
@@ -138,7 +137,7 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
               ) : (
                 <>
                   <ShoppingCart size={20} weight="bold" />
-                  Comprar
+                  Adicionar
                 </>
               )}
             </button>
@@ -149,14 +148,17 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
       {/* Modal for customization */}
       {showModal && (
         <>
-          <div
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+          <button
+            type="button"
+            aria-label="Fechar personaliza??o"
+            className="fixed inset-0 z-50 cursor-default bg-black/60 backdrop-blur-sm"
             onClick={() => setShowModal(false)}
           />
           <div className="fixed left-1/2 top-1/2 z-50 w-full max-w-md -translate-x-1/2 -translate-y-1/2 animate-fade-in rounded-2xl border border-border bg-card p-6 shadow-2xl">
             <div className="mb-6 flex items-center justify-between">
               <h3 className="text-xl font-bold">Personalizar Produto</h3>
               <button
+                type="button"
                 onClick={() => setShowModal(false)}
                 className="rounded-lg p-2 text-muted-foreground hover:bg-secondary"
               >
@@ -167,58 +169,64 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
             <div className="space-y-6">
               {/* Tamanho */}
               {produto.tamanhos && (
-                <div>
-                  <label className="mb-2 block font-semibold">Tamanho *</label>
+                <fieldset>
+                  <legend className="mb-2 block font-semibold">Tamanho *</legend>
                   <div className="flex flex-wrap gap-2">
                     {produto.tamanhos.map((tam) => (
                       <button
+                        type="button"
                         key={tam}
                         onClick={() => setSelectedTamanho(tam)}
                         className={clsx(
                           "rounded-lg border px-4 py-2 font-semibold transition-colors",
                           selectedTamanho === tam
                             ? "border-orange bg-orange/10 text-orange"
-                            : "border-border hover:border-orange"
+                            : "border-border hover:border-orange",
                         )}
                       >
                         {tam}
                       </button>
                     ))}
                   </div>
-                </div>
+                </fieldset>
               )}
 
               {/* Cor */}
               {produto.cores && (
-                <div>
-                  <label className="mb-2 block font-semibold">Cor *</label>
+                <fieldset>
+                  <legend className="mb-2 block font-semibold">Cor *</legend>
                   <div className="flex flex-wrap gap-2">
                     {produto.cores.map((cor) => (
                       <button
+                        type="button"
                         key={cor}
                         onClick={() => setSelectedCor(cor)}
                         className={clsx(
                           "rounded-lg border px-4 py-2 font-semibold transition-colors",
                           selectedCor === cor
                             ? "border-orange bg-orange/10 text-orange"
-                            : "border-border hover:border-orange"
+                            : "border-border hover:border-orange",
                         )}
                       >
                         {cor}
                       </button>
                     ))}
                   </div>
-                </div>
+                </fieldset>
               )}
 
               {/* Personalizacao */}
               {produto.personalizavel && (
                 <div>
-                  <label className="mb-2 flex items-center gap-2 font-semibold">
+                  <label
+                    htmlFor="custom-product-name"
+                    className="mb-2 flex items-center gap-2 font-semibold"
+                  >
                     <TextT size={20} className="text-gold" />
                     Nome nas Costas (opcional)
                   </label>
                   <input
+                    id="custom-product-name"
                     type="text"
                     value={nomePersonalizado}
                     onChange={(e) => setNomePersonalizado(e.target.value.toUpperCase())}
@@ -235,19 +243,21 @@ export default function ProdutoCard({ produto }: ProdutoCardProps) {
 
             <div className="mt-8 flex gap-3">
               <button
+                type="button"
                 onClick={() => setShowModal(false)}
                 className="flex-1 rounded-xl border border-border py-3 font-bold transition-colors hover:bg-secondary"
               >
                 Cancelar
               </button>
               <button
+                type="button"
                 onClick={handleConfirmAdd}
                 disabled={!canConfirm()}
                 className={clsx(
                   "flex-1 rounded-xl py-3 font-bold text-white transition-colors",
                   canConfirm()
                     ? "bg-orange hover:bg-orange-hover"
-                    : "cursor-not-allowed bg-secondary text-muted-foreground"
+                    : "cursor-not-allowed bg-secondary text-muted-foreground",
                 )}
               >
                 Adicionar ao Carrinho

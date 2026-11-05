@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import {
   ClockUser,
   Laptop,
@@ -7,7 +7,6 @@ import {
   GraduationCap,
   Student,
   ChartLineUp,
-  WhatsappLogo,
   InstagramLogo,
   Lightbulb,
   Warning,
@@ -17,19 +16,20 @@ import {
   Users,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import Image from "next/image";
 import { linksUteis } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Guia do Calouro",
-  description: "Tudo o que voce precisa saber para sobreviver (e dominar) o curso de Ciencias Contabeis na Unicesumar.",
+  description:
+    "Tudo o que voce precisa saber para sobreviver (e dominar) o curso de Ciencias Contabeis na Unicesumar.",
 };
 
 const dicasPrincipais = [
   {
     icon: ClockUser,
     title: "Horas Complementares",
-    description: "Fique de olho nas Acoes Sociais e eventos da Atletica. Voce vai precisar dessas horas para conseguir se formar sem desespero no ultimo ano! A Unicesumar exige um minimo de horas para a formatura.",
+    description:
+      "Fique de olho nas Acoes Sociais e eventos da Atletica. Voce vai precisar dessas horas para conseguir se formar sem desespero no ultimo ano! A Unicesumar exige um minimo de horas para a formatura.",
     color: "text-green",
     bgColor: "bg-green/10",
     borderColor: "border-green/30",
@@ -37,7 +37,8 @@ const dicasPrincipais = [
   {
     icon: Laptop,
     title: "Portal Studeo",
-    description: "Acompanhe o portal diariamente. Prazos de provas, atividades (MAPA) e boletos nao costumam ter perdao. Organizacao e tudo. Configure alertas no seu celular!",
+    description:
+      "Acompanhe o portal diariamente. Prazos de provas, atividades (MAPA) e boletos nao costumam ter perdao. Organizacao e tudo. Configure alertas no seu celular!",
     color: "text-green",
     bgColor: "bg-green/10",
     borderColor: "border-green/30",
@@ -45,7 +46,8 @@ const dicasPrincipais = [
   {
     icon: Calculator,
     title: "Calculadora HP12C",
-    description: "Sua nova melhor amiga de jornada. Quanto mais cedo voce aprender a mexer nela, mais facil sera a sua vida na matematica financeira. Baixe o emulador no celular e pratique!",
+    description:
+      "Sua nova melhor amiga de jornada. Quanto mais cedo voce aprender a mexer nela, mais facil sera a sua vida na matematica financeira. Baixe o emulador no celular e pratique!",
     color: "text-green",
     bgColor: "bg-green/10",
     borderColor: "border-green/30",
@@ -56,32 +58,38 @@ const dicasExtras = [
   {
     icon: Books,
     title: "Biblioteca Virtual",
-    description: "A Unicesumar oferece acesso a milhares de livros digitais. Use e abuse desse recurso para estudar e complementar o conteudo das aulas.",
+    description:
+      "A Unicesumar oferece acesso a milhares de livros digitais. Use e abuse desse recurso para estudar e complementar o conteudo das aulas.",
   },
   {
     icon: Coffee,
     title: "Intervalo Estrategico",
-    description: "Use os intervalos para networking. Conheca pessoas de outros periodos, troque experiencias e faca amizades que vao durar a vida toda.",
+    description:
+      "Use os intervalos para networking. Conheca pessoas de outros periodos, troque experiencias e faca amizades que vao durar a vida toda.",
   },
   {
     icon: ChartLineUp,
     title: "Bolsa de Estudos",
-    description: "Fique atento aos programas de bolsa e descontos. A universidade oferece diversas opcoes para quem tem bom desempenho academico.",
+    description:
+      "Fique atento aos programas de bolsa e descontos. A universidade oferece diversas opcoes para quem tem bom desempenho academico.",
   },
   {
     icon: Briefcase,
     title: "Estagios",
-    description: "Comece a buscar estagios a partir do 3o periodo. A experiencia pratica faz toda diferenca no mercado de trabalho contabil.",
+    description:
+      "Comece a buscar estagios a partir do 3o periodo. A experiencia pratica faz toda diferenca no mercado de trabalho contabil.",
   },
   {
     icon: Users,
     title: "Grupos de Estudo",
-    description: "Forme grupos de estudo com colegas. Estudar em grupo ajuda na fixacao do conteudo e torna a jornada mais leve e divertida.",
+    description:
+      "Forme grupos de estudo com colegas. Estudar em grupo ajuda na fixacao do conteudo e torna a jornada mais leve e divertida.",
   },
   {
     icon: Lightbulb,
     title: "Monitoria",
-    description: "Se tiver dificuldade em alguma materia, procure os monitores. Eles estao la para ajudar e tirar duvidas especificas.",
+    description:
+      "Se tiver dificuldade em alguma materia, procure os monitores. Eles estao la para ajudar e tirar duvidas especificas.",
   },
 ];
 
@@ -126,7 +134,8 @@ export default function GuiaCalouroPage() {
             Guia do <span className="text-green">Calouro</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            Tudo o que voce precisa saber para sobreviver (e dominar) o curso de Ciencias Contabeis na Unicesumar. Seja bem-vindo ao time!
+            Tudo o que voce precisa saber para sobreviver (e dominar) o curso de Ciencias Contabeis
+            na Unicesumar. Seja bem-vindo ao time!
           </p>
         </div>
       </section>
@@ -134,11 +143,11 @@ export default function GuiaCalouroPage() {
       {/* Main Tips */}
       <section className="mx-auto max-w-4xl px-4 py-16 lg:px-8">
         <div className="flex flex-col gap-6">
-          {dicasPrincipais.map((dica, index) => {
+          {dicasPrincipais.map((dica) => {
             const Icon = dica.icon;
             return (
               <div
-                key={index}
+                key={dica.title}
                 className={`card-hover flex flex-col items-center rounded-2xl border ${dica.borderColor} bg-card p-8 text-center md:flex-row md:text-left`}
               >
                 <div className={`mb-4 rounded-2xl ${dica.bgColor} p-4 md:mb-0 md:mr-6`}>
@@ -166,9 +175,9 @@ export default function GuiaCalouroPage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {sobrevivencia.map((periodo, index) => (
+            {sobrevivencia.map((periodo) => (
               <div
-                key={index}
+                key={periodo.titulo}
                 className="rounded-2xl border border-green/30 bg-background p-6"
               >
                 <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-green">
@@ -176,8 +185,8 @@ export default function GuiaCalouroPage() {
                   {periodo.titulo}
                 </h3>
                 <ul className="space-y-3">
-                  {periodo.itens.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                  {periodo.itens.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
                       <CheckCircle size={18} className="mt-0.5 flex-shrink-0 text-green" />
                       {item}
                     </li>
@@ -193,11 +202,11 @@ export default function GuiaCalouroPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <h2 className="font-damages mb-8 text-center text-4xl">Dicas Extras</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {dicasExtras.map((dica, index) => {
+          {dicasExtras.map((dica) => {
             const Icon = dica.icon;
             return (
               <div
-                key={index}
+                key={dica.title}
                 className="card-hover rounded-2xl border border-border bg-card p-6"
               >
                 <Icon size={40} weight="duotone" className="mb-4 text-gold" />
@@ -218,10 +227,12 @@ export default function GuiaCalouroPage() {
           <div className="flex-[2]">
             <h2 className="font-damages mb-4 text-3xl">Ainda esta perdido?</h2>
             <p className="mb-4 text-lg text-muted-foreground">
-              A faculdade pode parecer um labirinto no inicio. Qual materia e mais dificil? Como conseguir aquele estagio bom? Onde e a melhor festa pos-prova?
+              A faculdade pode parecer um labirinto no inicio. Qual materia e mais dificil? Como
+              conseguir aquele estagio bom? Onde e a melhor festa pos-prova?
             </p>
             <p className="mb-6 text-lg text-muted-foreground">
-              O Conselho da Impostores esta aqui para te ajudar. Somos veteranos que ja passaram pelos mesmos perrengues que voce. Manda uma mensagem pra gente!
+              O Conselho da Impostores esta aqui para te ajudar. Somos veteranos que ja passaram
+              pelos mesmos perrengues que voce. Manda uma mensagem pra gente!
             </p>
             <Link
               href={linksUteis.instagram}
@@ -243,7 +254,9 @@ export default function GuiaCalouroPage() {
             <div>
               <h3 className="mb-2 text-lg font-bold text-orange">Dica de Ouro</h3>
               <p className="text-muted-foreground">
-                Nao deixe para fazer as coisas na ultima hora. O acumulo de atividades e provas pode ser avassalador. Crie uma rotina desde o inicio e siga ela religiosamente. Seu eu do futuro vai agradecer!
+                Nao deixe para fazer as coisas na ultima hora. O acumulo de atividades e provas pode
+                ser avassalador. Crie uma rotina desde o inicio e siga ela religiosamente. Seu eu do
+                futuro vai agradecer!
               </p>
             </div>
           </div>

@@ -28,7 +28,10 @@ const damages = localFont({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://impostores.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Impostores | O Maior Cofre da Contabilidade",
     template: "%s | Impostores",
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://impostores.vercel.app",
+    url: siteUrl,
     siteName: "Atletica Impostores",
     title: "Impostores | O Maior Cofre da Contabilidade",
     description:
@@ -85,19 +88,22 @@ export const viewport: Viewport = {
   userScalable: true,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       {/* 3. Injetamos a variável da Damages no body do site */}
       <body className={`${inter.className} ${damages.variable}`}>
         <CartProvider>
-          <a href="#conteudo-principal" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-3 focus:font-bold focus:text-black">Pular para o conteúdo</a>
+          <a
+            href="#conteudo-principal"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-3 focus:font-bold focus:text-black"
+          >
+            Pular para o conteúdo
+          </a>
           <Navbar />
-          <main id="conteudo-principal" className="min-h-screen" tabIndex={-1}>{children}</main>
+          <main id="conteudo-principal" className="min-h-screen" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
           <CartDrawer />
         </CartProvider>

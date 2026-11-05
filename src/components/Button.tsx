@@ -1,38 +1,39 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
   loading?: boolean;
   icon?: ReactNode;
 }
 
 export default function Button({
   children,
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   loading = false,
   icon,
   disabled,
-  className = '',
+  className = "",
   ...props
 }: ButtonProps) {
   const variantClasses = {
-    primary: 'bg-primary hover:bg-primary/90 text-primary-foreground',
-    secondary: 'bg-secondary hover:bg-secondary/80 text-secondary-foreground',
-    outline: 'border border-border hover:bg-secondary text-foreground',
-    ghost: 'hover:bg-secondary text-foreground',
+    primary: "bg-primary hover:bg-primary/90 text-primary-foreground",
+    secondary: "bg-secondary hover:bg-secondary/80 text-secondary-foreground",
+    outline: "border border-border hover:bg-secondary text-foreground",
+    ghost: "hover:bg-secondary text-foreground",
   };
 
   const sizeClasses = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg',
+    sm: "px-3 py-1.5 text-sm",
+    md: "px-4 py-2 text-base",
+    lg: "px-6 py-3 text-lg",
   };
 
   return (
     <button
+      type="button"
       disabled={disabled || loading}
       className={`
         inline-flex items-center justify-center gap-2 rounded-lg font-medium

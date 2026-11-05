@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import ProdutoCard from "@/components/loja/ProdutoCard";
 import { produtos } from "@/lib/data";
 import { Vault, TShirt, Package, Sparkle } from "@phosphor-icons/react/dist/ssr";
@@ -6,7 +6,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Loja",
-  description: "Loja oficial da Atletica Impostores. Moletons, camisetas, copos e acessorios exclusivos.",
+  description:
+    "Catalogo informativo de produtos da Atletica Impostores. Consulte os canais oficiais para confirmar disponibilidade.",
 };
 
 export default function LojaPage() {
@@ -24,7 +25,8 @@ export default function LojaPage() {
             A <span className="text-gold">Loja</span> Impostores
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
-            Vista a camisa e faca parte da familia. Produtos exclusivos com a qualidade que voce merece.
+            Consulte os produtos ilustrativos. Disponibilidade, valores e condicoes precisam ser
+            confirmados pela diretoria.
           </p>
         </div>
       </section>
@@ -36,21 +38,32 @@ export default function LojaPage() {
             <div className="rounded-full bg-green/10 p-2 text-green">
               <Package size={20} weight="fill" />
             </div>
-            <span className="text-muted-foreground">Entrega na Faculdade</span>
+            <span className="text-muted-foreground">Catalogo demonstrativo</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
             <div className="rounded-full bg-gold/10 p-2 text-gold">
               <Sparkle size={20} weight="fill" />
             </div>
-            <span className="text-muted-foreground">Personalizacao Disponivel</span>
+            <span className="text-muted-foreground">Disponibilidade sob confirmacao</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
             <div className="rounded-full bg-orange/10 p-2 text-orange">
               <Vault size={20} weight="fill" />
             </div>
-            <span className="text-muted-foreground">PIX: impostoresunicesumar@gmail.com</span>
+            <span className="text-muted-foreground">Pedidos e pagamentos desativados</span>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
+        <p
+          role="status"
+          className="rounded-xl border border-orange/30 bg-orange/5 p-4 text-sm text-muted-foreground"
+        >
+          Esta pagina nao recebe pedidos nem solicita pagamentos. O carrinho e apenas uma previa
+          local; confirme produtos, estoque, precos e condicoes diretamente com os canais
+          institucionais.
+        </p>
       </section>
 
       {/* Kits Section */}

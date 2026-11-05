@@ -231,8 +231,8 @@ npm run check            # Verificar estrutura
 ## 📞 Contato & Suporte
 
 - **Instagram:** @impostoresa
-- **WhatsApp:** REMOVED_FROM_PUBLIC_HISTORY
-- **Email:** CONTACT_REMOVED_FROM_PUBLIC_HISTORY
+- **WhatsApp:** Consulte o Instagram oficial da Atl?tica.
+Atendimento: consulte o Instagram institucional da Atl?tica.
 - **GitHub Issues:** Reporte problemas
 
 ---

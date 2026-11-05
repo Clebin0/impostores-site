@@ -145,7 +145,7 @@ Mantenha o CHANGELOG.md atualizado.
 
 - Abra uma discussion no GitHub
 - Envie um DM no Instagram: @impostoresa
-- Email: CONTACT_REMOVED_FROM_PUBLIC_HISTORY
+Atendimento: consulte o Instagram institucional da Atl?tica.
 
 ## Licença
 

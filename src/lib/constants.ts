@@ -1,24 +1,11 @@
 export const SITE_CONFIG = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "IMPOSTORES",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  description: "A Atletica impostora da Unicesumar. Integracao, festas epicas, networking e a melhor delegacao do UNI 2026.",
+  description:
+    "A Atletica impostora da Unicesumar. Integracao, festas epicas, networking e a melhor delegacao do UNI 2026.",
   logo: "/images/logo.png",
   logoWithoutShield: "/images/logo-sem-escudo.png",
   mascot: "/images/mascote.png",
-};
-
-export const SOCIAL_MEDIA = {
-  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_USERNAME || "impostoresa",
-  instagramUrl: `https://instagram.com/impostoresa`,
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "REMOVED_FROM_PUBLIC_HISTORY",
-  whatsappUrl: `https://wa.me/5541999999999`,
-  email: "CONTACT_REMOVED_FROM_PUBLIC_HISTORY",
-};
-
-export const PIX_CONFIG = {
-  key: process.env.NEXT_PUBLIC_PIX_KEY || "REMOVED_FROM_PUBLIC_HISTORY",
-  cpf: "12345678901",
-  accountHolder: "ATLETICA IMPOSTORES",
 };
 
 export const NAVIGATION_ITEMS = [

@@ -43,11 +43,6 @@
       "source": "/instagram",
       "destination": "https://instagram.com/impostoresa",
       "permanent": false
-    },
-    {
-      "source": "/whatsapp",
-      "destination": "https://wa.me/5541999999999",
-      "permanent": false
     }
   ]
 }

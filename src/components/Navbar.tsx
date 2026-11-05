@@ -38,7 +38,10 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b-2 border-orange bg-card">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="relative z-50 flex items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold">
+        <Link
+          href="/"
+          className="relative z-50 flex items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        >
           <Image
             src="/images/logo-sem-escudo.png"
             alt="Logo Impostores"
@@ -73,9 +76,7 @@ export default function Navbar() {
                 aria-current={isActive ? "page" : undefined}
                 className={clsx(
                   "flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
-                  isActive
-                    ? "text-orange"
-                    : "text-muted-foreground hover:text-orange"
+                  isActive ? "text-orange" : "text-muted-foreground hover:text-orange",
                 )}
               >
                 <Icon size={18} />
@@ -116,7 +117,9 @@ export default function Navbar() {
           inert={!isMenuOpen}
           className={clsx(
             "absolute left-0 right-0 top-full flex max-h-[calc(100dvh-4rem)] flex-col gap-2 overflow-y-auto border-b-2 border-orange bg-card p-6 shadow-2xl transition-all duration-200 lg:hidden",
-            isMenuOpen ? "visible translate-y-0 opacity-100" : "invisible pointer-events-none -translate-y-3 opacity-0"
+            isMenuOpen
+              ? "visible translate-y-0 opacity-100"
+              : "invisible pointer-events-none -translate-y-3 opacity-0",
           )}
         >
           {navItems.map((item) => {
@@ -132,7 +135,7 @@ export default function Navbar() {
                   "flex items-center gap-3 rounded-lg px-4 py-3 font-semibold transition-colors",
                   isActive
                     ? "bg-orange/10 text-orange"
-                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    : "text-muted-foreground hover:bg-secondary hover:text-foreground",
                 )}
               >
                 <Icon size={22} />

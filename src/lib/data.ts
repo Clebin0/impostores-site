@@ -4,8 +4,9 @@ export const produtos: Produto[] = [
   {
     id: "caneca-liquidez",
     nome: "Caneca de Liquidez",
-    descricao: "Caneca oficial dos Impostores com design exclusivo. Perfeita para o café da manhã antes da prova.",
-    preco: 45.00,
+    descricao:
+      "Caneca oficial dos Impostores com design exclusivo. Perfeita para o café da manhã antes da prova.",
+    preco: 45.0,
     imagem: "/images/caneca.png",
     estoque: 0,
     categoria: "acessorios",
@@ -14,8 +15,9 @@ export const produtos: Produto[] = [
   {
     id: "copo-majoritario",
     nome: "Copo Majoritário",
-    descricao: "Copo oficial dos Impostores com tirante incluso. Indispensável para qualquer evento.",
-    preco: 35.00,
+    descricao:
+      "Copo oficial dos Impostores com tirante incluso. Indispensável para qualquer evento.",
+    preco: 35.0,
     imagem: "/images/copo.png",
     estoque: 0,
     categoria: "acessorios",
@@ -24,8 +26,9 @@ export const produtos: Produto[] = [
   {
     id: "moletom-oficial",
     nome: "Moletom Oficial",
-    descricao: "Moletom premium dos Impostores. Conforto e estilo para representar a maior atlética.",
-    preco: 189.00,
+    descricao:
+      "Moletom premium dos Impostores. Conforto e estilo para representar a maior atlética.",
+    preco: 189.0,
     imagem: "/images/moletom.jpg",
     estoque: 25,
     categoria: "vestuario",
@@ -37,7 +40,7 @@ export const produtos: Produto[] = [
     id: "camiseta-basica",
     nome: "Camiseta Básica Impostores",
     descricao: "Camiseta básica com logo bordado. Perfeita para o dia a dia.",
-    preco: 69.00,
+    preco: 69.0,
     imagem: "/images/camiseta.jpg",
     estoque: 50,
     categoria: "vestuario",
@@ -49,7 +52,7 @@ export const produtos: Produto[] = [
     id: "kit-calouro",
     nome: "Kit Calouro 2026",
     descricao: "Kit completo para o calouro: camiseta + copo + tirante + brindes exclusivos.",
-    preco: 120.00,
+    preco: 120.0,
     imagem: "/images/kit-calouro.jpg",
     estoque: 30,
     categoria: "kit",
@@ -60,7 +63,7 @@ export const produtos: Produto[] = [
     id: "bone-impostores",
     nome: "Boné Impostores",
     descricao: "Boné trucker com logo bordado. Ajuste traseiro para conforto.",
-    preco: 55.00,
+    preco: 55.0,
     imagem: "/images/bone.jpg",
     estoque: 15,
     categoria: "acessorios",
@@ -91,15 +94,15 @@ export const piadasContabeis = [
 
 export const linksUteis = {
   instagram: "https://www.instagram.com/impostoresuc/",
-  whatsapp: "https://wa.me/5541995108205",
-  pix: "impostoresunicesumar@gmail.com",
   socio: "https://cheers.com.br/socio/aaacc-impostores~4986?plano=21893",
-  uni2026Form: "https://docs.google.com/forms/d/e/1FAIpQLSdDY_gnQ9bwTQolVPV2v2rTVPhNqLPDz9KJp9Aqc37-a0gt6g/viewform",
+  uni2026Form:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdDY_gnQ9bwTQolVPV2v2rTVPhNqLPDz9KJp9Aqc37-a0gt6g/viewform",
 };
 
 export const metadados = {
   titulo: "Impostores | O Maior Cofre da Contabilidade",
-  descricao: "A Atlética impostora da Unicesumar. Integração, festas épicas, networking e a melhor delegação do UNI 2026.",
+  descricao:
+    "A Atlética impostora da Unicesumar. Integração, festas épicas, networking e a melhor delegação do UNI 2026.",
   instagram: "@impostoresuc",
   hashtag: "#FazoQuack",
 };
