@@ -369,7 +369,7 @@ _________________________________
 - Manager: [Contato]
 
 **Pós-Deploy:**
-- Suporte: CONTACT_REMOVED_FROM_PUBLIC_HISTORY
+Atendimento: consulte o Instagram institucional da Atl?tica.
 - Emergência: +55 41 999999999
 
 ---

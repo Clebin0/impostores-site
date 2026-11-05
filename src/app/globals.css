@@ -21,34 +21,34 @@
 :root {
   --background: 0 0% 0%;
   --foreground: 0 0% 100%;
-  
+
   --card: 0 0% 4%;
   --card-foreground: 0 0% 100%;
-  
+
   --popover: 0 0% 4%;
   --popover-foreground: 0 0% 100%;
-  
+
   --primary: 21 90% 48%;
   --primary-foreground: 0 0% 100%;
-  
+
   --secondary: 240 4% 16%;
   --secondary-foreground: 0 0% 100%;
-  
+
   --muted: 240 4% 16%;
   --muted-foreground: 240 5% 65%;
-  
+
   --accent: 45 93% 56%;
   --accent-foreground: 0 0% 0%;
-  
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  
+
   --border: 240 4% 16%;
   --input: 240 4% 16%;
   --ring: 21 90% 48%;
-  
+
   --radius: 1rem;
-  
+
   /* Cores Customizadas */
   --orange-main: 21 90% 48%;
   --orange-hover: 21 91% 40%;
@@ -84,7 +84,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
+
   --color-orange: hsl(var(--orange-main));
   --color-orange-hover: hsl(var(--orange-hover));
   --color-gold: hsl(var(--gold-main));
@@ -93,7 +93,7 @@
   --color-blue: hsl(var(--blue-main));
   --color-zinc-text: hsl(var(--zinc-text));
   --color-zinc-border: hsl(var(--zinc-border));
-  
+
   --font-damages: "Damages", sans-serif;
 }
 
@@ -122,16 +122,16 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  
+
   /* Configuração da Imagem */
   background-image: url(/images/fundo-atletica.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+
   /* Fica lá no fundo */
-  z-index: -2; 
-  
+  z-index: -2;
+
   /* O Truque Mágico: Força o uso da Placa de Vídeo (GPU) e para de travar */
   transform: translateZ(0);
   will-change: transform;
@@ -145,12 +145,12 @@ body::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  
+
   background-color: rgba(0, 0, 0, 0.7); /* Aumentei pra 0.7 pra garantir a leitura */
-  
+
   /* Fica entre o site e a foto */
-  z-index: -1; 
-  
+  z-index: -1;
+
   /* Força aceleração da GPU também */
   transform: translateZ(0);
 }
@@ -181,53 +181,105 @@ body::after {
 
 /* Animation utilities */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(234, 88, 12, 0.5); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(234, 88, 12, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(234, 88, 12, 0.5);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.animate-fade-in { animation: fadeIn 0.4s ease-in-out forwards; }
-.animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
-.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-.animate-float { animation: float 3s ease-in-out infinite; }
-.animate-marquee { animation: marquee 20s linear infinite; }
-.animate-marquee:hover { animation-play-state: paused; }
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
 
 /* Glow effects */
-.glow-orange { filter: drop-shadow(0px 10px 30px rgba(234, 88, 12, 0.4)); }
-.glow-gold { filter: drop-shadow(0px 10px 30px rgba(251, 191, 36, 0.4)); }
-.glow-green { filter: drop-shadow(0px 10px 30px rgba(34, 197, 94, 0.3)); }
-.glow-blue { filter: drop-shadow(0px 10px 30px rgba(59, 130, 246, 0.4)); }
+.glow-orange {
+  filter: drop-shadow(0px 10px 30px rgba(234, 88, 12, 0.4));
+}
+.glow-gold {
+  filter: drop-shadow(0px 10px 30px rgba(251, 191, 36, 0.4));
+}
+.glow-green {
+  filter: drop-shadow(0px 10px 30px rgba(34, 197, 94, 0.3));
+}
+.glow-blue {
+  filter: drop-shadow(0px 10px 30px rgba(59, 130, 246, 0.4));
+}
 
 /* Card hover effects */
-.card-hover { transition: all 0.3s ease; }
+.card-hover {
+  transition: all 0.3s ease;
+}
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* Product image hover */
-.product-img-hover { transition: transform 0.3s ease; }
-.product-img-hover:hover { transform: scale(1.1); }
+.product-img-hover {
+  transition: transform 0.3s ease;
+}
+.product-img-hover:hover {
+  transform: scale(1.1);
+}
 
 /* Button shine effect */
 .btn-shine {
@@ -247,30 +299,87 @@ body::after {
   transition: 0.5s;
 }
 
-.btn-shine:hover::after { left: 100%; }
+.btn-shine:hover::after {
+  left: 100%;
+}
 
 /* Gradient backgrounds */
-.bg-gradient-orange { background: linear-gradient(135deg, hsl(var(--card)), #1a0f0a); }
-.bg-gradient-gold { background: linear-gradient(135deg, hsl(var(--card)), #2a1a00); }
-.bg-gradient-blue { background: linear-gradient(135deg, hsl(var(--card)), #0f172a); }
-.bg-gradient-green { background: linear-gradient(135deg, hsl(var(--card)), #052e16); }
+.bg-gradient-orange {
+  background: linear-gradient(135deg, hsl(var(--card)), #1a0f0a);
+}
+.bg-gradient-gold {
+  background: linear-gradient(135deg, hsl(var(--card)), #2a1a00);
+}
+.bg-gradient-blue {
+  background: linear-gradient(135deg, hsl(var(--card)), #0f172a);
+}
+.bg-gradient-green {
+  background: linear-gradient(135deg, hsl(var(--card)), #052e16);
+}
 
 /* Acessibilidade e conforto em toda a experiência */
-:focus-visible { outline: 2px solid hsl(var(--accent)); outline-offset: 3px; }
-::selection { background: hsl(var(--primary)); color: white; }
+:focus-visible {
+  outline: 2px solid hsl(var(--accent));
+  outline-offset: 3px;
+}
+::selection {
+  background: hsl(var(--primary));
+  color: white;
+}
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: enforce reduced motion even against component styles. */
+    animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: enforce reduced motion even against component styles. */
+    animation-iteration-count: 1 !important;
+    /* biome-ignore lint/complexity/noImportantStyles: enforce reduced motion even against component styles. */
+    transition-duration: 0.01ms !important;
+  }
 }
 @media (max-width: 640px) {
-  body::before, body::after { width: 100%; height: 100dvh; }
+  body::before,
+  body::after {
+    width: 100%;
+    height: 100dvh;
+  }
 }
 
 /* Editorial visual language */
-:root { color-scheme: dark; }
-html { scroll-padding-top: 5rem; }
-body { background-color: #101012; }
-.editorial-eyebrow { font-size: .75rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #f3bc55; }
-.editorial-card { border: 1px solid rgba(255,255,255,.12); background: rgba(20,20,22,.94); border-radius: 1rem; transition: border-color .2s ease, transform .2s ease; }
-.editorial-card:hover { border-color: rgba(241,106,36,.65); transform: translateY(-3px); }
-@media (prefers-reduced-motion: reduce) { .editorial-card:hover { transform: none; } }
+:root {
+  color-scheme: dark;
+}
+html {
+  scroll-padding-top: 5rem;
+}
+body {
+  background-color: #101012;
+}
+.editorial-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f3bc55;
+}
+.editorial-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(20, 20, 22, 0.94);
+  border-radius: 1rem;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.editorial-card:hover {
+  border-color: rgba(241, 106, 36, 0.65);
+  transform: translateY(-3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .editorial-card:hover {
+    transform: none;
+  }
+}

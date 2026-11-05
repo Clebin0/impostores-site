@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Evento } from '@/lib/types';
+import { useState, useEffect } from "react";
+import type { Evento } from "@/lib/types";
 
 export function useEventos() {
   const [eventos, setEventos] = useState<Evento[]>([]);
@@ -12,15 +12,15 @@ export function useEventos() {
     async function fetchEventos() {
       try {
         setLoading(true);
-        const response = await fetch('/data/eventos.json');
+        const response = await fetch("/data/eventos.json");
         if (!response.ok) {
-          throw new Error('Falha ao carregar eventos');
+          throw new Error("Falha ao carregar eventos");
         }
         const data = await response.json();
         setEventos(data.eventos || []);
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Erro desconhecido');
+        setError(err instanceof Error ? err.message : "Erro desconhecido");
         setEventos([]);
       } finally {
         setLoading(false);
@@ -35,9 +35,7 @@ export function useEventos() {
     const ano = data.getFullYear();
     return eventos.filter((evento) => {
       const eventData = new Date(evento.data);
-      return (
-        eventData.getMonth() + 1 === mes && eventData.getFullYear() === ano
-      );
+      return eventData.getMonth() + 1 === mes && eventData.getFullYear() === ano;
     });
   };
 
@@ -45,10 +43,7 @@ export function useEventos() {
     const agora = new Date();
     return eventos
       .filter((evento) => new Date(evento.data) >= agora)
-      .sort(
-        (a, b) =>
-          new Date(a.data).getTime() - new Date(b.data).getTime()
-      )
+      .sort((a, b) => new Date(a.data).getTime() - new Date(b.data).getTime())
       .slice(0, quantidade);
   };
 

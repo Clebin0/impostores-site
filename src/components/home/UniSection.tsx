@@ -17,14 +17,11 @@ export default function UniSection() {
               20, 21 E 22 DE NOVEMBRO | FLORIANOPOLIS
             </div>
 
-            <h2 className="font-damages mb-4 text-5xl text-gold lg:text-6xl">
-              POUPA UNI 2K26
-            </h2>
+            <h2 className="font-damages mb-4 text-5xl text-gold lg:text-6xl">POUPA UNI 2K26</h2>
 
             <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
               Fala, Patinhos! O Patao esta de volta. Pacote completo: transporte
-              (Curitiba-Florianopolis), hospedagem, festas e o Kit Impostores
-              exclusivo.
+              (Curitiba-Florianopolis), hospedagem, festas e o Kit Impostores exclusivo.
             </p>
 
             {/* Pricing Table */}
@@ -38,27 +35,20 @@ export default function UniSection() {
               <div className="divide-y divide-border">
                 <div className="flex items-center justify-between px-6 py-4">
                   <span className="text-foreground">1 Lote (Completo)</span>
-                  <span className="text-xl font-extrabold text-gold">
-                    R$ 1.400,00
-                  </span>
+                  <span className="text-xl font-extrabold text-gold">R$ 1.400,00</span>
                 </div>
                 <div className="flex items-center justify-between px-6 py-4">
                   <span className="text-foreground">2 Lote (Completo)</span>
-                  <span className="text-xl font-extrabold text-gold">
-                    R$ 1.440,00
-                  </span>
+                  <span className="text-xl font-extrabold text-gold">R$ 1.440,00</span>
                 </div>
                 <div className="flex items-center justify-between px-6 py-4">
                   <span className="text-foreground">3 Lote (Completo)</span>
-                  <span className="text-xl font-extrabold text-gold">
-                    R$ 1.470,00
-                  </span>
+                  <span className="text-xl font-extrabold text-gold">R$ 1.470,00</span>
                 </div>
               </div>
               <div className="border-t border-gold/30 bg-background px-6 py-4">
                 <p className="text-sm text-muted-foreground">
-                  Pagamento via PIX:{" "}
-                  <strong className="text-foreground">{linksUteis.pix}</strong>
+                  Consulte os canais oficiais para informa??es de pagamento.
                 </p>
               </div>
             </div>
@@ -89,16 +79,9 @@ export default function UniSection() {
                 <Phone size={20} weight="fill" className="text-gold" />
                 Suporte UNI:
               </h4>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>
-                  <strong className="text-foreground">Aline Santos</strong>{" "}
-                  (Pres.): (41) 99510-8205
-                </p>
-                <p>
-                  <strong className="text-foreground">Bruno Rafael</strong>{" "}
-                  (Vice): (41) 99573-7930
-                </p>
-              </div>
+              <p className="text-sm text-muted-foreground">
+                Fale com a atl?tica pelos canais oficiais.
+              </p>
               <div className="mt-4 flex items-center gap-2 text-sm text-gold">
                 <MapPin size={16} weight="fill" />
                 Florianopolis, SC

@@ -11,36 +11,21 @@ export default function CTASection() {
         {/* Loja CTA */}
         <div className="group relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-to-br from-card to-[#1a1400] p-8 lg:p-12">
           <div className="absolute -right-10 -top-10 opacity-10">
-            <Image
-              src="/images/pato.png"
-              alt=""
-              width={200}
-              height={200}
-              className="rotate-12"
-            />
+            <Image src="/images/pato.png" alt="" width={200} height={200} className="rotate-12" />
           </div>
           <div className="relative z-10">
-            <Vault
-              size={64}
-              weight="duotone"
-              className="mb-6 text-gold"
-            />
-            <h3 className="font-damages mb-4 text-3xl text-gold lg:text-4xl">
-              Vista a Impostores
-            </h3>
+            <Vault size={64} weight="duotone" className="mb-6 text-gold" />
+            <h3 className="font-damages mb-4 text-3xl text-gold lg:text-4xl">Vista a Impostores</h3>
             <p className="mb-8 text-lg text-muted-foreground">
-              Confira nossos produtos exclusivos: moletons, camisetas, copos e
-              muito mais. Vista a camisa e faça parte da família.
+              Confira nossos produtos exclusivos: moletons, camisetas, copos e muito mais. Vista a
+              camisa e faça parte da família.
             </p>
             <Link
               href="/loja"
               className="btn-shine group inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 font-extrabold text-background transition-all hover:bg-gold-hover"
             >
               Explorar a loja
-              <ArrowRight
-                size={20}
-                className="transition-transform group-hover:translate-x-1"
-              />
+              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
@@ -57,27 +42,18 @@ export default function CTASection() {
             />
           </div>
           <div className="relative z-10">
-            <HandHeart
-              size={64}
-              weight="duotone"
-              className="mb-6 text-green"
-            />
-            <h3 className="font-damages mb-4 text-3xl text-green lg:text-4xl">
-              Acao Social
-            </h3>
+            <HandHeart size={64} weight="duotone" className="mb-6 text-green" />
+            <h3 className="font-damages mb-4 text-3xl text-green lg:text-4xl">Acao Social</h3>
             <p className="mb-8 text-lg text-muted-foreground">
-              Participe das nossas ações solidárias, ajude quem precisa e ainda
-              garanta suas horas complementares.
+              Participe das nossas ações solidárias, ajude quem precisa e ainda garanta suas horas
+              complementares.
             </p>
             <Link
               href="/acao-social"
               className="btn-shine group inline-flex items-center gap-2 rounded-xl bg-green px-6 py-3 font-extrabold text-background transition-all hover:opacity-90"
             >
               Participar
-              <ArrowRight
-                size={20}
-                className="transition-transform group-hover:translate-x-1"
-              />
+              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>

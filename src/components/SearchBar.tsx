@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { MagnifyingGlass, X } from '@phosphor-icons/react';
+import { useState, useEffect } from "react";
+import { MagnifyingGlass, X } from "@phosphor-icons/react";
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
   placeholder?: string;
 }
 
-export default function SearchBar({ onSearch, placeholder = 'Buscar...' }: SearchBarProps) {
-  const [query, setQuery] = useState('');
+export default function SearchBar({ onSearch, placeholder = "Buscar..." }: SearchBarProps) {
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,8 +22,8 @@ export default function SearchBar({ onSearch, placeholder = 'Buscar...' }: Searc
   return (
     <div className="relative w-full max-w-md">
       <div className="relative flex items-center">
-        <MagnifyingGlass 
-          size={20} 
+        <MagnifyingGlass
+          size={20}
           className="absolute left-3 text-muted-foreground pointer-events-none"
         />
         <input
@@ -35,7 +35,8 @@ export default function SearchBar({ onSearch, placeholder = 'Buscar...' }: Searc
         />
         {query && (
           <button
-            onClick={() => setQuery('')}
+            type="button"
+            onClick={() => setQuery("")}
             className="absolute right-3 text-muted-foreground hover:text-foreground transition"
             aria-label="Limpar busca"
           >

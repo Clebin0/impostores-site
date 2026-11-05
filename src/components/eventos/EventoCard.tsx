@@ -67,9 +67,7 @@ export default function EventoCard({
       className={`card-hover flex flex-col overflow-hidden rounded-2xl border ${colors.border} bg-card`}
     >
       {/* Header with icon */}
-      <div
-        className={`flex h-36 items-center justify-center bg-gradient-to-br ${colors.bg}`}
-      >
+      <div className={`flex h-36 items-center justify-center bg-gradient-to-br ${colors.bg}`}>
         <Icon size={80} weight="fill" className="text-white/60" />
       </div>
 
@@ -77,17 +75,9 @@ export default function EventoCard({
       <div className="flex flex-1 flex-col p-6">
         {/* Date and Title */}
         <div className="mb-4 flex items-center gap-4 border-b border-border pb-4">
-          <div
-            className={`rounded-lg border ${colors.border} bg-background p-3 text-center`}
-          >
-            <span
-              className={`block text-xs font-bold uppercase ${colors.text}`}
-            >
-              {mes}
-            </span>
-            <span className="block text-2xl font-black text-foreground">
-              {dia}
-            </span>
+          <div className={`rounded-lg border ${colors.border} bg-background p-3 text-center`}>
+            <span className={`block text-xs font-bold uppercase ${colors.text}`}>{mes}</span>
+            <span className="block text-2xl font-black text-foreground">{dia}</span>
           </div>
           <h3 className="flex-1 text-xl font-bold text-foreground">{titulo}</h3>
         </div>
@@ -114,6 +104,7 @@ export default function EventoCard({
           </Link>
         ) : (
           <button
+            type="button"
             disabled
             className="rounded-xl border border-border bg-secondary px-4 py-3 font-bold text-muted-foreground"
           >
