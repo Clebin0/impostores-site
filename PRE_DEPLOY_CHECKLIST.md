@@ -370,7 +370,6 @@ _________________________________
 
 **Pós-Deploy:**
 Atendimento: consulte o Instagram institucional da Atl?tica.
-- Emergência: EMERGENCY_PHONE_REMOVED
 
 ---
 
